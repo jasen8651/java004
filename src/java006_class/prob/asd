@@ -1,0 +1,83 @@
+class Book2 {
+	String title;
+	String author;
+	void show() { System.out.println(title + " " + author); }
+	
+	public Book2() {
+		this("", "");
+		System.out.println("생성자 호출됨");
+	}
+
+	public Book2(String title) {
+		this(title, "작자미상");
+	}
+	
+	public Book2(String title, String author) {
+		this.title = title;
+		this.author = author;
+	}
+	
+}
+
+
+class Box {
+	private int width, height; // 박스의 너비와 높이
+	private char fillChar; // 박스를 그리는 데 사용하는 문자
+
+	public Box() { // 매개 변수 없는 생성자
+		this(10, 1); // this() 이용
+	}
+
+	public Box(int width, int height) { // 너비외 높이의 2 매개 변수를 가진 생성자
+		this.width = width;
+		this.height = height;
+	}
+
+	public void draw() { // 박스 그리는 메소드
+		///////////// 여기에서 구현하세요.
+		
+		
+
+	}// end draw()
+
+	public void fill(char c) { 
+		// 박스를 그리는데 사용하는 문자 설정
+		this.fillChar = c;
+		
+	}//end fill( )
+}//end class
+
+
+class Office {
+	int num;
+	int jumsu;
+	int chk;
+
+	public Office(int chk) {
+		this.chk = chk;
+	}
+
+	// 프로그램을 컴파일할때 정상적으로 수행이 되도록 생성자를 정의하시오.
+
+
+	/////////////////////////////////////////////////////
+
+	public void count() {
+		// 점수가 80이상이면 chk에 1로 변경한다.
+		if (jumsu >= 80) {
+			chk = 1;
+		} else {
+			chk = 2;
+		}
+
+	}
+
+	public void prn() {
+		System.out.printf("%d %d %d\n", num, jumsu, chk);
+	}
+
+	public void process() {
+		count();
+		prn();
+	}
+}
