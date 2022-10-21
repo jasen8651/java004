@@ -18,9 +18,36 @@ public class main031 {
 			if(sale.length==Pointer) {
 				Object[] arr = new Object[sale.length*2];
 				System.arraycopy(sale, 0, arr, 0, sale.length);
+				sale =arr;
 			}
 			
+			
 			sale[Pointer++]=element;
+		}
+
+		/*
+		 * public Object get(int index) { try { if(index<=Pointer) throw new
+		 * ArrayIndexOutOfBoundsException(index); }catch (ArrayIndexOutOfBoundsException
+		 * ex) { System.out.println(ex.toString()); } return sale[index];
+		 * 
+		 * }
+		 */public Object get(int index) throws ArrayIndexOutOfBoundsException{
+			if(index<Pointer)
+				return sale[index];
+			else
+				throw new ArrayIndexOutOfBoundsException(index);
+		}
+		
+		public int size() {
+			return Pointer;
+		}
+		public Object remove(int index) {
+			Object obj = sale[index];
+			for(int i=index; i<Pointer; i++) {
+				sale[i] =sale[i+1];
+			}
+			Pointer--;
+			return obj;
 		}
 
 	}
