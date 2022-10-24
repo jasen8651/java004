@@ -1,5 +1,6 @@
 package java002;
 
+
 public class Kospi {
 	private String stock ; //주가항목
 	private long price; //현재가격

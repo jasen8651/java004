@@ -1,5 +1,6 @@
 package java002;
 
+
 public class Television {
 	private int rank;  //순위
 	private String program;  //프로그램명

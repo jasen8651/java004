@@ -1,9 +1,14 @@
 package java002;
 
+
 public class BookDTO {
 	private String title;
 	private String kind;
 	private int rentalPrice;
+	
+	public BookDTO() {
+		// TODO Auto-generated constructor stub
+	}
 	
 	public BookDTO(String title, String kind, int rentalPrice) {
 		this.title = title;
@@ -11,6 +16,8 @@ public class BookDTO {
 		this.rentalPrice = rentalPrice;
 	}
 
+	
+	
 	public String getTitle() {
 		return title;
 	}

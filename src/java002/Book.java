@@ -1,4 +1,5 @@
 package java002;
+
 class Book{
 	private String title;
 	private String publisher;

@@ -1,5 +1,6 @@
 package java002;
 
+
 class SmartPhone{
 	private String productId;
 	private String maker;

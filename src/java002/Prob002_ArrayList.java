@@ -2,6 +2,8 @@ package java002;
 
 
 import java.util.ArrayList;
+import java.util.List;
+
 
 
 /*
@@ -18,11 +20,11 @@ import java.util.ArrayList;
  *  ---> 7200
  *  만화책 대여수입
  *  ---> 2000
-
  */
+
+
 public class Prob002_ArrayList {
 
-	
 	public static void main(String[] args) {
 		ArrayList<BookDTO> bookList = new ArrayList<BookDTO>();
 		bookList.add(new BookDTO("Java Programming", "컴퓨터", 1400));
@@ -36,7 +38,7 @@ public class Prob002_ArrayList {
 		bookList.add(new BookDTO("개미", "소설", 1300));
 		bookList.add(new BookDTO("찔레꽃", "소설", 1000));
 		bookList.add(new BookDTO("톰 과 제리", "만화", 2000));
-		
+
 		System.out.println("컴퓨터책 대여수입");
 		System.out.println("---> " + BookManager.getRentalPrice(bookList, "컴퓨터"));
 		
@@ -46,6 +48,8 @@ public class Prob002_ArrayList {
 		System.out.println("만화책 대여수입");
 		System.out.println("---> " + BookManager.getRentalPrice(bookList, "만화"));
 
-	}//end main()
+	}// end main()
+	
+	
 
-}//end class
+}// end class
