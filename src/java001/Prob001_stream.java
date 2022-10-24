@@ -22,7 +22,7 @@ public class Prob001_stream {
 	public static void main(String[] args) {
 	     //각 학생의 총점을 출력하는 프로그램을 구현하시오.
 		File file=new File("./src/java001/score.txt");
-		Vector< >
+	
 	}//end main()
 
 }//end class

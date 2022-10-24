@@ -10,7 +10,7 @@ import java.util.Scanner;
 public class Java172__1_stream {
 
 	public static void main(String[] args) {
-		File file = new File("src/java016_stream");
+		File file = new File("src/java001");
 		FileWriter fw=null;
 		Scanner sc =null;
 		 try {		
