@@ -1,4 +1,4 @@
-package java017_collection.prob;
+package java002;
 import java.io.File;
 import java.util.Scanner;
 import java.util.Vector;

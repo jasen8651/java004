@@ -1,4 +1,4 @@
-package java017_collection.prob;
+package java002;
 
 public class Television {
 	private int rank;  //순위

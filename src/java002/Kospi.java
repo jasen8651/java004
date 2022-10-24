@@ -1,4 +1,4 @@
-package java017_collection.prob;
+package java002;
 
 public class Kospi {
 	private String stock ; //주가항목

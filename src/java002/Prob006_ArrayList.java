@@ -1,4 +1,4 @@
-package java017_collection.prob;
+package java002;
 import java.util.ArrayList;
 /*
  * [프로그램 실행결과]

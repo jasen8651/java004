@@ -1,4 +1,4 @@
-package java017_collection.prob;
+package java002;
 
 class SmartPhone{
 	private String productId;
