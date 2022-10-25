@@ -31,40 +31,35 @@ public class Prob005_ArrayList {
      /*
       * tv.txt파일의 데이터를 ArrayList에 저장하는 프로그램을 구현하시오.
       */
-		
-		try {
-			Scanner  sc=new Scanner(new File(".\\src\\java002\\tv.txt"));
+	try(Scanner sc =new Scanner(new File("./src/java002/tv.txt"))) {
+		while (sc.hasNextLine()) {
+			String line = sc.nextLine();
+			String arr[] = line.split(":");
+			Television tv = new Television();
+			tv.setRank(Integer.parseInt(arr[0]));
+			tv.setProgram(arr[1]);
+			tv.setChannel(arr[2]);
+			tv.setRating(Double.parseDouble(arr[3]));
+			aList.add(tv);
 			
-			while(sc.hasNext()){
-				String line=sc.nextLine();
-				String arr[]=line.split(":");
-				Television tv=new Television();
-				tv.setRank(Integer.parseInt(arr[0]));
-				tv.setProgram(arr[1]);
-				tv.setChannel(arr[2]);
-				tv.setRating(Double.parseDouble(arr[3]));
-				aList.add(tv);
-			}
-		} catch (FileNotFoundException e) {			
-			e.printStackTrace();
 		}
-	
-		
-		
-		prnDisplay(aList,"MBC");
-		prnDisplay(aList,"KBS1");
-		prnDisplay(aList,"KBS2");
-		prnDisplay(aList,"SBS");
-
+	}catch (FileNotFoundException ex) {
+		System.out.println(ex.toString());
+	}
+		prnDisplay(aList, "MBC");
+		prnDisplay(aList, "KBS1");
+		prnDisplay(aList, "KBS2");
+		prnDisplay(aList, "SBS");
 	}//end main()
 	
 	public static void prnDisplay(ArrayList<Television> aList, String channel){
 		//channel매개변수에 해당하는 프로그램이 출력되도록 구현하시오.
-		System.out.println("["+channel+"]");
-		for(Television tv : aList){
-			if(tv.getChannel().equals(channel))
-				System.out.printf("%3d \t %-10s \t %-4s %5.1f\n",
-						  tv.getRank(),tv.getProgram(),tv.getChannel(),tv.getRating());
+		System.out.printf("[%s ]\n", channel);
+		for(Television tv : aList) {
+			if(tv.getChannel().equals(channel)) {
+				System.out.printf("%3d \t %-10s \t %-4s \t %5.1f\n",
+				tv.getRank(), tv.getProgram(),tv.getChannel(),tv.getRating() );
+			}
 		}
 	}//end prnDisplay()
 

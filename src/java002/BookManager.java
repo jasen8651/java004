@@ -10,8 +10,9 @@ public class BookManager {
 		
 		int sum=0;
 		for( BookDTO dto : bookList ){
-			if(dto.getKind().equals(kind))
+			if(dto.getKind().equals(kind)) {
 				sum+=dto.getRentalPrice();
+			}
 		}
 		return sum;
 	}//end getRentalPrice()

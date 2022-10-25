@@ -1,4 +1,4 @@
-package java003_statements;
+package java003_01;
 
 /*
  * for(조건식;조건식;증감식){
