@@ -30,6 +30,7 @@ public class User {
 		resut =prime *resut+age;
 		resut = prime * resut+gender;
 		resut = prime*resut+((id==null)? 0: id.hashCode());
+		
 		return resut;
 	}
 	
