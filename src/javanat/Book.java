@@ -1,19 +1,28 @@
-	package javanat;
+package javanat;
 
 public class Book {
- private	String title;
+	private int num;
+	private String title;
 	private String author;
 	
 	public Book() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Book(String title, String author) {
+	public Book(int num, String title, String author) {
 		super();
+		this.num = num;
 		this.title = title;
 		this.author = author;
 	}
 
+	public int getNum() {
+		return num;
+	}
+
+	public void setNum(int num) {
+		this.num = num;
+	}
 
 	public String getTitle() {
 		return title;
@@ -23,25 +32,17 @@ public class Book {
 		this.title = title;
 	}
 
-
 	public String getAuthor() {
 		return author;
 	}
 
-
-
-
 	public void setAuthor(String author) {
 		this.author = author;
 	}
-
-
-
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
-		return title+ " "+ author;
+		
+		return  "Book[num:"+this.num+"][title"+this.title+"][author :"+this.author+"])";
 	}
-	
-	
+
 }
