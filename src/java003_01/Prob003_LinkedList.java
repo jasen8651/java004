@@ -9,6 +9,8 @@ import java.util.LinkedList;
  */
 public class Prob003_LinkedList {
 
+	private static final Sports Sports = null;
+
 	public static void main(String[] args) {
 		LinkedList<Sports> list=new LinkedList<Sports>();
 		
@@ -25,7 +27,7 @@ public class Prob003_LinkedList {
 		//code, program매개변수에 저장된 값을 Sports클래스에 저장한후 
 		//리턴하는 프로그램을 구현하시오.
 		Sports sports = new Sports(code, program);
-		//return Sports;
+		return Sports;
 	}//end save()
 
 }//end class
