@@ -1,15 +1,16 @@
-package javadb;
+package javajdc1;
 
-import java.util.List;
-
-public class Departmentsdtd {
+// DTO : Data Transfer Object
+// VO : Variable Object
+// Entity
+public class DepartmentsDTO {
 	private int department_id;
 	private String department_name;
 	private int manager_id;
 	private int location_id;
-
-	public Departmentsdtd() {
-		// TODO Auto-generated constructor stub
+	
+	public DepartmentsDTO() {
+		
 	}
 
 	public int getDepartment_id() {
@@ -43,5 +44,6 @@ public class Departmentsdtd {
 	public void setLocation_id(int location_id) {
 		this.location_id = location_id;
 	}
-
+	
+	
 }

@@ -9,19 +9,23 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DepartmentdDAO {
+public class DepartmentsDAO {
 
+	// dto : data transfer object
+	//vo : variable object
+	//entity
 	private Connection conn;
 	private Statement stmt;
 	private ResultSet rs;
 	private PreparedStatement pstmt;
+	private List<DepartmentsDTO> aList;
 
-	private static DepartmentdDAO dao = new DepartmentdDAO();
+	private static DepartmentsDAO dao = new DepartmentsDAO();
 
-	private DepartmentdDAO() {
+	private DepartmentsDAO() {
 	}
 
-	public static DepartmentdDAO getInstance() {
+	public static DepartmentsDAO getInstance() {
 		return dao;
 	}
 
@@ -45,8 +49,8 @@ public class DepartmentdDAO {
 			conn.close();
 	}
 
-	public List<Departmentsdtd> listDepartments() {
-		List<Departmentsdtd> aList = new ArrayList<Departmentsdtd>();
+	public List<DepartmentsDTO> listDepartments() {
+		List<DepartmentsDTO> aList = new ArrayList<DepartmentsDTO>();
 
 		try {
 			conn = init();
@@ -55,7 +59,7 @@ public class DepartmentdDAO {
 			String sql = " SELECT * FROM departments ORDER BY department_id";
 			rs = stmt.executeQuery(sql);
 			while (rs.next()) {
-				Departmentsdtd dto = new Departmentsdtd();
+				DepartmentsDTO dto = new DepartmentsDTO();
 				dto.setDepartment_id(rs.getInt("department_id"));
 				dto.setDepartment_name(rs.getString("department_name"));
 				dto.setManager_id(rs.getInt("manager_id"));
@@ -87,5 +91,40 @@ public class DepartmentdDAO {
 			}
 		}
 		return aList;
+	}
+	public List<DepartmentsDTO> searchDepartments(String data){
+		List<DepartmentsDTO> aList = new ArrayList<DepartmentsDTO>();
+		
+		try {
+			conn = init();
+			conn.setAutoCommit(false);
+			
+			stmt = conn.createStatement();
+			String sql = " SELECT * FROM departments where department_name like'%" + data + "%' ORDER BY department_id";
+			rs = stmt.executeQuery(sql);
+			
+			while(rs.next()) {
+				DepartmentsDTO dto = new DepartmentsDTO();
+				dto.setDepartment_id(rs.getInt("department_id"));
+				dto.setDepartment_name(rs.getString("department_name"));
+				dto.setManager_id(rs.getInt("manager_id"));
+				dto.setLocation_id(rs.getInt("location_id"));
+				aList.add(dto);
+			}
+			conn.commit();
+		} catch (ClassNotFoundException |SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			try {
+				conn.setAutoCommit(true);
+				exit();
+			}catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return aList;
+		
+		
 	}
 }
